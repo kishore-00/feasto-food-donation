@@ -23,7 +23,7 @@ const Home = () => {
     useEffect(() => {
         const fetchListings = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/listings');
+                const res = await axios.get('https://feasto-food-donation.onrender.com/api/listings');
                 setListings(res.data);
                 setLoading(false);
             } catch (err) {
@@ -47,9 +47,9 @@ const Home = () => {
         }
 
         try {
-            await axios.put(`http://localhost:5000/api/listings/${id}/claim`);
+            await axios.put(`https://feasto-food-donation.onrender.com/api/listings/${id}/claim`);
             // Refresh listings
-            const res = await axios.get('http://localhost:5000/api/listings');
+            const res = await axios.get('https://feasto-food-donation.onrender.com/api/listings');
             setListings(res.data);
             return true;
         } catch (err) {

@@ -12,7 +12,7 @@ const NotificationBell = () => {
     const dropdownRef = useRef(null);
     const [unreadCount, setUnreadCount] = useState(0);
 
-    const API_URL = 'http://localhost:5000/api/notifications';
+    const API_URL = 'https://feasto-food-donation.onrender.com/api/notifications';
 
     const fetchNotifications = async () => {
         try {

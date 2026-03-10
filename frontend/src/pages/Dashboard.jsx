@@ -60,7 +60,7 @@ const Dashboard = () => {
             try {
                 let res;
                 if (user.role === 'donor') {
-                    res = await axios.get('http://localhost:5000/api/listings/my-listings');
+                    res = await axios.get('https://feasto-food-donation.onrender.com/api/listings/my-listings');
                     const listings = res.data;
                     setData(listings);
 
@@ -77,7 +77,7 @@ const Dashboard = () => {
                     });
 
                 } else if (user.role === 'volunteer') {
-                    res = await axios.get('http://localhost:5000/api/listings/my-claims');
+                    res = await axios.get('https://feasto-food-donation.onrender.com/api/listings/my-claims');
                     // For volunteers, endpoint returns Transaction objects populated with listing
                     const claims = res.data;
                     setData(claims);
@@ -108,7 +108,7 @@ const Dashboard = () => {
         try {
             let res;
             if (user.role === 'donor') {
-                res = await axios.get('http://localhost:5000/api/listings/my-listings');
+                res = await axios.get('https://feasto-food-donation.onrender.com/api/listings/my-listings');
                 const listings = res.data;
                 setData(listings);
                 const total = listings.length;
@@ -116,7 +116,7 @@ const Dashboard = () => {
                 const value = listings.reduce((acc, curr) => acc + (curr.price || 0), 0);
                 setStats({ totalItems: total, activeItems: active, totalValue: value, completed: total - active });
             } else if (user.role === 'volunteer') {
-                res = await axios.get('http://localhost:5000/api/listings/my-claims');
+                res = await axios.get('https://feasto-food-donation.onrender.com/api/listings/my-claims');
                 const claims = res.data;
                 setData(claims);
                 const total = claims.length;
@@ -142,7 +142,7 @@ const Dashboard = () => {
         if (!listingToDelete) return;
         setDeleting(true);
         try {
-            await axios.delete(`http://localhost:5000/api/listings/${listingToDelete._id}`);
+            await axios.delete(`https://feasto-food-donation.onrender.com/api/listings/${listingToDelete._id}`);
             setDeleteModalOpen(false);
             setListingToDelete(null);
             await refreshData();
