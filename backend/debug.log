@@ -1,0 +1,25 @@
+Received create listing request: {"title":"pizza ","description":"rich & cereamy","quantity":"2","type":"non-veg","expiryDate":"2026-02-01T23:00","location":{"type":"Point","coordinates":[76.998335881124,10.903904320354782],"address":"Selected Location (10.9039, 76.9983)"},"pickupInstructions":"","price":200}
+Donor ID: 6979eaa8745b87ea74a53fcc
+Listing created: 697f8b0647430e6bce2b7b48
+Error in createListing: error processing query: ns=test.usersTree: $and
+    role $in [ "volunteer" "recipient"]
+    GEONEAR  field=location.coordinates maxdist=10000 isNearSphere=0
+Sort: {}
+Proj: {}
+ planner returned error :: caused by :: unable to find index for $geoNear query
+Stack: MongoServerError: error processing query: ns=test.usersTree: $and
+    role $in [ "volunteer" "recipient"]
+    GEONEAR  field=location.coordinates maxdist=10000 isNearSphere=0
+Sort: {}
+Proj: {}
+ planner returned error :: caused by :: unable to find index for $geoNear query
+    at Connection.sendCommand (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Connection.command (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\connection.js:334:26)
+    at async Server.command (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\server.js:194:29)
+    at async tryOperation (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:213:32)
+    at async executeOperation (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async FindCursor._initialize (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async FindCursor.fetchBatch (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async FindCursor.next (D:\antigravity files\uber\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
