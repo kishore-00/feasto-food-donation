@@ -163,5 +163,3 @@ Food waste is responsible for roughly 8-10% of global greenhouse gas emissions w
 
 with open("README.md", "w", encoding="utf-8") as f:
 f.write(readme_content)
-
-```
